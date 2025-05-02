@@ -1,22 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// import UserList from './pages/UserList';
+// import EditUser from './pages/EditUser';
+import AddUser from './pages/AddUser';
+import UserManagement from './pages/UserManagement';
 
 function App() {
-  const [message, setMessage] = useState('Loading...');
-
-  useEffect(() => {
-    fetch('/api/hello')
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message))
-      .catch((err) => setMessage('Error fetching from backend'));
-  }, []);
-
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    </div>
+    <Router>
+      <Routes>
+        {/* <Route path="/" element={<UserList />} /> */}
+        <Route path="/add" element={<AddUser />} /> 
+        <Route path="/" element={<UserManagement />} />
+        {/* <Route path="/edit/:id" element={<EditUser />} /> */}
+      </Routes>
+    </Router>
   );
 }
 
