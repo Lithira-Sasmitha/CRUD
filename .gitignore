@@ -1,0 +1,14 @@
+# Node.js
+node_modules/
+
+logs/
+*.log
+
+# React build (if full-stack project)
+client/build/
+
+# System/IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
